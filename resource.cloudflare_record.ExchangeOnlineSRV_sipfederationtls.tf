@@ -1,8 +1,8 @@
 resource "cloudflare_record" "ExchangeOnlineSRV_sipfederationtls" {
-  domain = "${var.cloudflare_zone}"
-  name   = "_sipfederationtls._tcp"
-  type   = "SRV"
-  ttl    = 3600
+  zone_id = var.cloudflare_zone_id
+  name    = "_sipfederationtls._tcp"
+  type    = "SRV"
+  ttl     = 3600
 
   data = {
     service  = "_sipfederationtls"

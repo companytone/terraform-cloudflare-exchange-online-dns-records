@@ -1,9 +1,9 @@
 resource "cloudflare_record" "ExchangeOnlineMXRecord" {
-  domain = "${var.cloudflare_zone}"
-  name   = "@"
+  zone_id = var.cloudflare_zone_id
+  name    = "@"
 
   # value  = "${var.ExchangeOnlineMXRecord}"
-  value    = "${replace(var.cloudflare_zone, ".", "-")}.mail.protection.outlook.com"
+  value    = "${replace(var.domain_name, ".", "-")}.mail.protection.outlook.com"
   type     = "MX"
   ttl      = 3600
   priority = 0
